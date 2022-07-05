@@ -9,3 +9,4 @@ export 'polygon.dart';
 export 'polygon_updates.dart';
 export 'camera.dart';
 export 'bitmap.dart';
+export 'visible_region.dart';

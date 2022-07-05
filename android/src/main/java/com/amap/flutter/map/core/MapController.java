@@ -145,6 +145,18 @@ public class MapController
                     result.success(null);
                 }
                 break;
+            case Const.GET_LATLNGBOUNDS:
+                if(null != amap){
+
+                    final MethodChannel.Result _result = result;
+                    LatLngBounds latLngBounds =  amap.getProjection().getVisibleRegion().latLngBounds;
+                    Map<String,Double> map = new HashMap<>();
+                    map.put("southwestLng",latLngBounds.southwest.longitude);
+                    map.put("southwestLat",latLngBounds.southwest.latitude);
+                    map.put("northeastLng",latLngBounds.northeast.longitude);
+                    map.put("northeastLat",latLngBounds.northeast.latitude);
+                    _result.success(map);
+                }
             default:
                 LogUtil.w(CLASS_NAME, "onMethodCall not find methodId:" + call.method);
                 break;

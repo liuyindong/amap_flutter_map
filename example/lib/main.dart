@@ -1,3 +1,4 @@
+import 'package:amap_flutter_map_example/pages/map/latlng_bounds.dart';
 import 'package:amap_flutter_map_example/pages/overlays/marker_add_after_map.dart';
 import 'package:amap_flutter_map_example/pages/overlays/marker_add_with_map.dart';
 import 'package:amap_flutter_map_example/pages/overlays/marker_config.dart';
@@ -28,6 +29,7 @@ import 'base_page.dart';
 final List<BasePage> _mapDemoPages = <BasePage>[
   AllMapConfigDemoPage('总体演示', '演示AMapWidget的所有配置项'),
   ShowMapPage('显示地图', '基本地图显示'),
+  LatLngBound('范围', '地图边界'),
   LimitMapBoundsPage('限制地图显示范围', '演示限定手机屏幕显示地图的范围'),
   MinMaxZoomDemoPage('指定显示级别范围', '演示指定最小最大级别功能'),
   ChangeMapTypePage('切换地图图层', '演示内置的地图图层'),

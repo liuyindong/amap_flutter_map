@@ -251,6 +251,12 @@ class MethodChannelAMapFlutterMap implements AMapFlutterPlatform {
     return channel(mapId).invokeMethod<Uint8List>('map#takeSnapshot');
   }
 
+    Future<Map?> getLatLngBounds({
+    required int mapId,
+  }) {
+    return channel(mapId).invokeMethod<Map>('map#getLatLngBounds');
+  }
+
   //获取地图审图号（普通地图）
   Future<String?> getMapContentApprovalNumber({
     required int mapId,

@@ -117,6 +117,11 @@ class AMapController {
     return _methodChannel.takeSnapshot(mapId: mapId);
   }
 
+    ///获取getLatLngBounds
+  Future<Map?> getLatLngBounds() {
+    return _methodChannel.getLatLngBounds(mapId: mapId);
+  }
+
   /// 获取地图审图号（普通地图）
   ///
   /// 任何使用高德地图API调用地图服务的应用必须在其应用中对外透出审图号

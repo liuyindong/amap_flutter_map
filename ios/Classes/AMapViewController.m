@@ -234,6 +234,10 @@
         [weakSelf.mapView clearDisk];
         result(nil);
     }];
+    [self.channel addMethodName:@"map#getLatLngBounds" withHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+        NSLog(@"苹果这里暂未开发，待开发");
+        result(nil);
+    }];
 }
 
 //MARK: MAMapViewDelegate
