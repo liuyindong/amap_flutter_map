@@ -17,6 +17,7 @@
 #import "AMapPolyline.h"
 #import "MAPolylineRenderer+Flutter.h"
 #import <CoreLocation/CoreLocation.h>
+#import <AMapNaviCommonObj.h>
 #import "AMapPolygonController.h"
 #import "MAPolygon+Flutter.h"
 #import "MAPolygonRenderer+Flutter.h"
@@ -24,8 +25,9 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AMapLocation.h"
 #import "AMapJsonUtils.h"
-#import "AMapConvertUtil.h"
+#import "AMapNaviCommonObj.h"
 #import "FlutterMethodChannel+MethodCallDispatch.h"
+
 
 @interface AMapViewController ()<MAMapViewDelegate>
 
@@ -235,8 +237,7 @@
         result(nil);
     }];
     [self.channel addMethodName:@"map#getLatLngBounds" withHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
-        NSLog(@"苹果这里暂未开发，待开发");
-        result(nil);
+        result([AMapConvertUtil mapRectFromArray:limitBounds]);
     }];
 }
 
