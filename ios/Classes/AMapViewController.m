@@ -16,7 +16,6 @@
 #import "MAPolyline+Flutter.h"
 #import "AMapPolyline.h"
 #import "MAPolylineRenderer+Flutter.h"
-#import <AMapNaviCommonObj.h>
 #import "AMapPolygonController.h"
 #import "MAPolygon+Flutter.h"
 #import "MAPolygonRenderer+Flutter.h"
