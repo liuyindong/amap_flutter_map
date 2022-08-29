@@ -247,6 +247,7 @@
         model.topRight = topRight;
         model.bottomLeft = bottomLeft;
         model.bottomRight = bottomRight;
+        result(model);
     }];
 }
 
