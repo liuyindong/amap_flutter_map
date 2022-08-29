@@ -43,7 +43,7 @@ class _BodyState extends State<_Body> {
     setState(() {
       _iconPath = _iconPath == _startIconPath ? _endIconPath : _startIconPath;
       _initMarkerMap[_currentMarkerId!] =
-          marker.copyWith(iconParam: BitmapDescriptor.fromIconPath(_iconPath));
+          marker.copyWith(iconParam: BitmapDescriptor.fromIconPath("https://webapi.amap.com/theme/v1.3/markers/n/mark_r1.png"));
     });
   }
 

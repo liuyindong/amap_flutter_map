@@ -27,6 +27,7 @@
 #import "AMapJsonUtils.h"
 #import "AMapNaviCommonObj.h"
 #import "FlutterMethodChannel+MethodCallDispatch.h"
+#import "FLViewConvertCoordinateModel.h"
 
 
 @interface AMapViewController ()<MAMapViewDelegate>
@@ -237,7 +238,15 @@
         result(nil);
     }];
     [self.channel addMethodName:@"map#getLatLngBounds" withHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
-        result([AMapConvertUtil mapRectFromArray:limitBounds]);
+        CLLocationCoordinate2D topLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+        CLLocationCoordinate2D topRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+        CLLocationCoordinate2D bottomLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+        CLLocationCoordinate2D bottomRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+        FLViewConvertCoordinateModel *model = [[FLViewConvertCoordinateModel alloc] init];
+        model.topLeft = topLeft;
+        model.topRight = topRight;
+        model.bottomLeft = bottomLeft;
+        model.bottomRight = bottomRight;
     }];
 }
 
