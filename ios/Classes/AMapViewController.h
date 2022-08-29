@@ -8,6 +8,18 @@
 #import <Foundation/Foundation.h>
 #import <Flutter/Flutter.h>
 #import <MAMapKit/MAMapKit.h>
+@class MAMapView;
+
+@interface FLViewConvertCoordinateModel : NSObject
+
+@property CLLocationCoordinate2D topLeft;
+@property CLLocationCoordinate2D topRight;
+@property CLLocationCoordinate2D bottomLeft;
+@property CLLocationCoordinate2D bottomRight;
+
+@end
+
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
                viewIdentifier:(int64_t)viewId
                     arguments:(id _Nullable)args
                     registrar:(NSObject<FlutterPluginRegistrar>*)registrar;
+
++ (FLViewConvertCoordinateModel *)viewConvertCoordinate:(MAMapView *)mapView;
 
 @end
 

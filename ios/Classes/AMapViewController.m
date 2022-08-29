@@ -16,6 +16,7 @@
 #import "MAPolyline+Flutter.h"
 #import "AMapPolyline.h"
 #import "MAPolylineRenderer+Flutter.h"
+#import <CoreLocation/CoreLocation.h>
 #import "AMapPolygonController.h"
 #import "MAPolygon+Flutter.h"
 #import "MAPolygonRenderer+Flutter.h"
@@ -23,9 +24,8 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AMapLocation.h"
 #import "AMapJsonUtils.h"
-#import "AMapNaviCommonObj.h"
+#import "AMapConvertUtil.h"
 #import "FlutterMethodChannel+MethodCallDispatch.h"
-#import "FLViewConvertCoordinateModel.h"
 
 
 @interface AMapViewController ()<MAMapViewDelegate>
@@ -240,11 +240,13 @@
         CLLocationCoordinate2D topRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         CLLocationCoordinate2D bottomLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         CLLocationCoordinate2D bottomRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
-        FLViewConvertCoordinateModel *model = [[FLViewConvertCoordinateModel alloc] init];
+        
+        AMapViewController *model = [[AMapViewController alloc] init];
         model.topLeft = topLeft;
         model.topRight = topRight;
         model.bottomLeft = bottomLeft;
         model.bottomRight = bottomRight;
+       
         result(model);
     }];
 }
