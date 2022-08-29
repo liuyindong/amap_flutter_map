@@ -10,7 +10,7 @@
 #import <MAMapKit/MAMapKit.h>
 @class MAMapView;
 
-@interface FLViewConvertCoordinateModel : NSObject
+@interface AMapViewController : NSObject
 
 @property CLLocationCoordinate2D topLeft;
 @property CLLocationCoordinate2D topRight;
@@ -30,8 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
                     arguments:(id _Nullable)args
                     registrar:(NSObject<FlutterPluginRegistrar>*)registrar;
 
-+ (FLViewConvertCoordinateModel *)viewConvertCoordinate:(MAMapView *)mapView;
++ (AMapViewController *)viewConvertCoordinate:(MAMapView *)mapView;
 
-@end
+@endviewConvertCoordinate
 
 NS_ASSUME_NONNULL_END
