@@ -244,9 +244,9 @@
     
         result( @{
             @"northeastLat":@(topRight.latitude),
-            @"northeastLon":@(topRight.longitude),
+            @"northeastLng":@(topRight.longitude),
             @"southwestLat":@(bottomLeft.latitude),
-            @"southwestLon":@(bottomLeft.longitude)
+            @"southwestLng":@(bottomLeft.longitude)
          }
        );
     }];
