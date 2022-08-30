@@ -236,10 +236,10 @@
         result(nil);
     }];
     [self.channel addMethodName:@"map#getLatLngBounds" withHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
-        CLLocationCoordinate2D topLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+       // CLLocationCoordinate2D topLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         CLLocationCoordinate2D topRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMinY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         CLLocationCoordinate2D bottomLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
-        CLLocationCoordinate2D bottomRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
+       // CLLocationCoordinate2D bottomRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         
     
         result( @{
