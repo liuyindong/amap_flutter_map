@@ -241,15 +241,18 @@
         CLLocationCoordinate2D bottomLeft = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMinX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         CLLocationCoordinate2D bottomRight = [weakSelf.mapView convertPoint:CGPointMake(CGRectGetMaxX(weakSelf.mapView.bounds), CGRectGetMaxY(weakSelf.mapView.bounds)) toCoordinateFromView:weakSelf.mapView];
         
-        AMapViewController *model = [[AMapViewController alloc] init];
-        model.topLeft = topLeft;
-        model.topRight = topRight;
-        model.bottomLeft = bottomLeft;
-        model.bottomRight = bottomRight;
-       
-        result(model);
+    
+        result( @{
+            @"northeastLat":@(topRight.latitude),
+            @"northeastLon":@(topRight.longitude),
+            @"southwestLat":@(bottomLeft.latitude),
+            @"southwestLon":@(bottomLeft.longitude)
+         }
+       );
     }];
 }
+
+
 
 //MARK: MAMapViewDelegate
 
