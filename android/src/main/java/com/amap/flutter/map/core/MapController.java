@@ -20,7 +20,7 @@ import com.amap.flutter.map.MyMethodCallHandler;
 import com.amap.flutter.map.utils.Const;
 import com.amap.flutter.map.utils.ConvertUtil;
 import com.amap.flutter.map.utils.LogUtil;
-
+import com.amap.api.services.help.InputtipsQuery;
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -147,7 +147,6 @@ public class MapController
                 break;
             case Const.GET_LATLNGBOUNDS:
                 if(null != amap){
-
                     final MethodChannel.Result _result = result;
                     LatLngBounds latLngBounds =  amap.getProjection().getVisibleRegion().latLngBounds;
                     Map<String,Double> map = new HashMap<>();
@@ -157,6 +156,11 @@ public class MapController
                     map.put("northeastLat",latLngBounds.northeast.latitude);
                     _result.success(map);
                 }
+            case Const.GET_SEARCH_ADDRESS:
+               if(null != amap){
+                   com.amap.api.services.poisearch.PoiSearch.Query __obj__ = new com.amap.api.services.poisearch.PoiSearch.Query(call.argument("name"), "", "");
+                   _result.success(__obj__);
+               }
             default:
                 LogUtil.w(CLASS_NAME, "onMethodCall not find methodId:" + call.method);
                 break;

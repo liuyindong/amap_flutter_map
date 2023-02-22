@@ -251,10 +251,19 @@ class MethodChannelAMapFlutterMap implements AMapFlutterPlatform {
     return channel(mapId).invokeMethod<Uint8List>('map#takeSnapshot');
   }
 
-    Future<Map?> getLatLngBounds({
+  Future<Map?> getLatLngBounds({
     required int mapId,
   }) {
     return channel(mapId).invokeMethod<Map>('map#getLatLngBounds');
+  }
+
+  Future<Map?> searchAddress({
+    required String name,
+    required int mapId,
+  }) {
+    return channel(mapId).invokeMethod<Map>('map#searchAddress',<String, dynamic>{
+      'name': name,
+    });
   }
 
   //获取地图审图号（普通地图）

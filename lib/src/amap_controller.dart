@@ -122,6 +122,10 @@ class AMapController {
     return _methodChannel.getLatLngBounds(mapId: mapId);
   }
 
+   Future<Map?> searchAddress(String name) {
+    return _methodChannel.searchAddress(mapId: mapId,name: name);
+  }
+
   /// 获取地图审图号（普通地图）
   ///
   /// 任何使用高德地图API调用地图服务的应用必须在其应用中对外透出审图号
