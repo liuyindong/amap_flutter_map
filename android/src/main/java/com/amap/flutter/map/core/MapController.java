@@ -157,7 +157,7 @@ public class MapController
                 }
             case Const.GET_SEARCH_ADDRESS:
                if(null != amap){
-                com.amap.api.services.poisearch.PoiSearch.Query __obj__ = new com.amap.api.services.poisearch.PoiSearch.Query((String) call.argument("name"), "", "");
+               
                }
             default:
                 LogUtil.w(CLASS_NAME, "onMethodCall not find methodId:" + call.method);
