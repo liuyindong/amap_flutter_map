@@ -21,7 +21,6 @@
 #import "MAPolygon+Flutter.h"
 #import "MAPolygonRenderer+Flutter.h"
 #import "AMapPolygon.h"
-#import <AMapFoundationKit/AMapFoundationKit.h>
 #import "AMapLocation.h"
 #import "AMapJsonUtils.h"
 #import "AMapConvertUtil.h"
