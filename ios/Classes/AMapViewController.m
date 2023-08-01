@@ -25,6 +25,7 @@
 #import "AMapJsonUtils.h"
 #import "AMapConvertUtil.h"
 #import "FlutterMethodChannel+MethodCallDispatch.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 
 @interface AMapViewController ()<MAMapViewDelegate>
